@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="# 工具准备 1、hugo下载安装（下载扩展版） 1）下载地址 https://github.com/gohugoio/hugo/releases 2）更改系统环境变量（让系统知道你已经下载了） 在path中添加hugo目录 3）运行hugo version查看版本，若出现版本号表示成功安装，若不成功，查看加入 path 的路径是否填对。 2、下载网站主题 1）下载网址 https://themes.gohugo.io/ # 网站搭建 1、新建一个文件夹，在文件夹内用cmd命令hugo new site xx在文件夹内创建一个网站 命令行：hugo new site MyBlog 此时的目录结构应该是这样: . ├── archetypes # 内容类型，在创建新内容时自动生成内容的配置 ├── content # 网站内容，Markdown 文件 ├── data ├── layouts # 网站模版，选择主题后会将主题中的 layouts 文件夹中的内容复制到此文件夹中 ├── static # 包含 CSS、JavaScript、Fonts、media 等，决定网站的外观。选择主题后会将主题中的 ststic 文件夹中的内容复制到此文件夹中 ├── themes # 存放主题文件 └── config.toml # 网站的配置文件 2、复制网站主题到MyBlog目录下themes文件夹中 3、修改网站配置信息（以hugo-theme-stack模板为例） 删掉默认的配置文件config.toml 将主题文件中的exampleSite中的config.yaml拷贝到blog根目录中 将themes/hugo-theme-stack/exampleSite里的content整个文件夹复制到根目录中 跟据需要修改config.yaml中的内容可以配置各个页面及相应功能： 1 2 3 4 5 6 7 8 9 baseURL = &#34;https://xiegl6.">
+<title>Hugo搭建静态网页</title>
+
+<link rel='canonical' href='https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/'>
+
+<link rel="stylesheet" href="/scss/style.min.8e60baf4cd3fc55968717a6e39762f4d28ed7ef6007566b6c7970ad0fe907198.css"><meta property='og:title' content="Hugo搭建静态网页">
+<meta property='og:description' content="# 工具准备 1、hugo下载安装（下载扩展版） 1）下载地址 https://github.com/gohugoio/hugo/releases 2）更改系统环境变量（让系统知道你已经下载了） 在path中添加hugo目录 3）运行hugo version查看版本，若出现版本号表示成功安装，若不成功，查看加入 path 的路径是否填对。 2、下载网站主题 1）下载网址 https://themes.gohugo.io/ # 网站搭建 1、新建一个文件夹，在文件夹内用cmd命令hugo new site xx在文件夹内创建一个网站 命令行：hugo new site MyBlog 此时的目录结构应该是这样: . ├── archetypes # 内容类型，在创建新内容时自动生成内容的配置 ├── content # 网站内容，Markdown 文件 ├── data ├── layouts # 网站模版，选择主题后会将主题中的 layouts 文件夹中的内容复制到此文件夹中 ├── static # 包含 CSS、JavaScript、Fonts、media 等，决定网站的外观。选择主题后会将主题中的 ststic 文件夹中的内容复制到此文件夹中 ├── themes # 存放主题文件 └── config.toml # 网站的配置文件 2、复制网站主题到MyBlog目录下themes文件夹中 3、修改网站配置信息（以hugo-theme-stack模板为例） 删掉默认的配置文件config.toml 将主题文件中的exampleSite中的config.yaml拷贝到blog根目录中 将themes/hugo-theme-stack/exampleSite里的content整个文件夹复制到根目录中 跟据需要修改config.yaml中的内容可以配置各个页面及相应功能： 1 2 3 4 5 6 7 8 9 baseURL = &#34;https://xiegl6.">
+<meta property='og:url' content='https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/'>
+<meta property='og:site_name' content='Day Day Up'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-04-10T22:57:41&#43;08:00'/><meta property='article:modified_time' content='2024-04-10T22:57:41&#43;08:00'/>
+<meta name="twitter:title" content="Hugo搭建静态网页">
+<meta name="twitter:description" content="# 工具准备 1、hugo下载安装（下载扩展版） 1）下载地址 https://github.com/gohugoio/hugo/releases 2）更改系统环境变量（让系统知道你已经下载了） 在path中添加hugo目录 3）运行hugo version查看版本，若出现版本号表示成功安装，若不成功，查看加入 path 的路径是否填对。 2、下载网站主题 1）下载网址 https://themes.gohugo.io/ # 网站搭建 1、新建一个文件夹，在文件夹内用cmd命令hugo new site xx在文件夹内创建一个网站 命令行：hugo new site MyBlog 此时的目录结构应该是这样: . ├── archetypes # 内容类型，在创建新内容时自动生成内容的配置 ├── content # 网站内容，Markdown 文件 ├── data ├── layouts # 网站模版，选择主题后会将主题中的 layouts 文件夹中的内容复制到此文件夹中 ├── static # 包含 CSS、JavaScript、Fonts、media 等，决定网站的外观。选择主题后会将主题中的 ststic 文件夹中的内容复制到此文件夹中 ├── themes # 存放主题文件 └── config.toml # 网站的配置文件 2、复制网站主题到MyBlog目录下themes文件夹中 3、修改网站配置信息（以hugo-theme-stack模板为例） 删掉默认的配置文件config.toml 将主题文件中的exampleSite中的config.yaml拷贝到blog根目录中 将themes/hugo-theme-stack/exampleSite里的content整个文件夹复制到根目录中 跟据需要修改config.yaml中的内容可以配置各个页面及相应功能： 1 2 3 4 5 6 7 8 9 baseURL = &#34;https://xiegl6.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/kawa_hu8b82778b961e4525b8624599158ba533_22862_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Day Day Up</a></h1>
+            <h2 class="site-description">学无止境，勇攀高峰！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/xiegl6'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#工具准备">工具准备</a></li>
+    <li><a href="#网站搭建">网站搭建</a></li>
+    <li><a href="#将网站部署在github">将网站部署在GitHub</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/base_learn/" style="background-color: #2a9d8f; color: #fff;">
+                Base_learn
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/">Hugo搭建静态网页</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 10, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="工具准备">
+    <a href="#%e5%b7%a5%e5%85%b7%e5%87%86%e5%a4%87">#</a>
+    工具准备
+</h2><p>1、hugo下载安装（下载扩展版）<br>
+1）下载地址  <a class="link" href="https://github.com/gohugoio/hugo/releases"  target="_blank" rel="noopener"
+    >https://github.com/gohugoio/hugo/releases</a> <br>
+2）更改系统环境变量（让系统知道你已经下载了）<br>
+在path中添加hugo目录<br>
+<img src="/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041002.png"
+	width="810"
+	height="786"
+	srcset="/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041002_hua694e655f865a96cfab62c46ebc82743_56397_480x0_resize_box_3.png 480w, /p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041002_hua694e655f865a96cfab62c46ebc82743_56397_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="2024041002.png"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="103"
+		data-flex-basis="247px"
+	
+>
+3）运行<code>hugo version</code>查看版本，若出现版本号表示成功安装，若不成功，查看加入 path 的路径是否填对。<br>
+2、下载网站主题<br>
+1）下载网址  <a class="link" href="https://themes.gohugo.io/"  target="_blank" rel="noopener"
+    >https://themes.gohugo.io/</a><br></p>
+<h2 id="网站搭建">
+    <a href="#%e7%bd%91%e7%ab%99%e6%90%ad%e5%bb%ba">#</a>
+    网站搭建
+</h2><p>1、新建一个文件夹，在文件夹内用cmd命令hugo new site xx在文件夹内创建一个网站
+命令行：hugo new site MyBlog
+<img src="/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041003.png"
+	width="939"
+	height="305"
+	srcset="/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041003_hu601ffc5d9077c2be4e70f192fb4c4c9d_28213_480x0_resize_box_3.png 480w, /p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041003_hu601ffc5d9077c2be4e70f192fb4c4c9d_28213_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="2024041003.png"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="307"
+		data-flex-basis="738px"
+	
+>
+此时的目录结构应该是这样:</p>
+<blockquote>
+<p>.<br>
+├── archetypes # 内容类型，在创建新内容时自动生成内容的配置<br>
+├── content # 网站内容，Markdown 文件<br>
+├── data<br>
+├── layouts # 网站模版，选择主题后会将主题中的 layouts 文件夹中的内容复制到此文件夹中<br>
+├── static # 包含 CSS、JavaScript、Fonts、media 等，决定网站的外观。选择主题后会将主题中的 ststic 文件夹中的内容复制到此文件夹中<br>
+├── themes # 存放主题文件<br>
+└── config.toml # 网站的配置文件<br></p>
+</blockquote>
+<p>2、复制网站主题到MyBlog目录下themes文件夹中<br></p>
+<p>3、修改网站配置信息（以hugo-theme-stack模板为例）</p>
+<blockquote>
+<p>删掉默认的配置文件config.toml<br>
+将主题文件中的exampleSite中的config.yaml拷贝到blog根目录中<br>
+将themes/hugo-theme-stack/exampleSite里的content整个文件夹复制到根目录中<br>
+跟据需要修改config.yaml中的内容可以配置各个页面及相应功能：<br></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">baseURL = &#34;https://xiegl6.github.io&#34; # &lt;head&gt; 里面的 baseurl 信息，填你的博客地址
+</span></span><span class="line"><span class="cl">title = &#34;Day Day Up&#34; # 浏览器的标题
+</span></span><span class="line"><span class="cl">languageCode = &#34;zh-cn&#34; # 语言
+</span></span><span class="line"><span class="cl">hasCJKLanguage = true # 开启可以让「字数统计」统计汉字
+</span></span><span class="line"><span class="cl">theme = &#34;hugo-theme-stack&#34; # 主题 (需要自己下载)
+</span></span><span class="line"><span class="cl">paginate = 11 # 每页的文章数
+</span></span><span class="line"><span class="cl">enableEmoji = true # 支持 Emoji
+</span></span><span class="line"><span class="cl">enableRobotsTXT = true # 支持 robots.txt
+</span></span><span class="line"><span class="cl">googleAnalytics = &#34;&#34; # Google 统计 id
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>4、开始创作</p>
+<p>1）在MyBlog文件夹中用命令行：hugo new post/Hugo搭建静态网页/index.md即可在content/post/Hugo搭建静态网页目录中生成一篇博客
+index.md内容为：
+<img src="/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041004.png"
+	width="816"
+	height="95"
+	srcset="/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041004_huac617b90059045e72d87e9eef64865b7_4943_480x0_resize_box_3.png 480w, /p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041004_huac617b90059045e72d87e9eef64865b7_4943_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="2024041004.png"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="858"
+		data-flex-basis="2061px"
+	
+>
+其中：</p>
+<blockquote>
+<p>两条 &mdash; 间的信息是文章的配置信息，有的信息是自动生成的 (如：title、date 等)，简单介绍以下各项配置:<br>
+以下项目是自动生成的:<br>
+title: # 文章标题<br>
+date: # 写作时间<br>
+draft: # 是否为草稿，如果为 true 需要在命令中加入 &ndash;buildDrafts 参数才会生成这个文档。或者写完后改为 false，则可以通过网址看到这篇博客。<br>
+以下项目需要自行添加:<br>
+description: # 描述<br>
+tags: # 标签，用于文章分类<br>
+自动生成 和 执行添加 的内容并不是绝对的，你可以根据自己的喜好配置模板文件 archetypes/default.md<br></p>
+</blockquote>
+<p>5、启动网站服务
+1）在根目录下使用hugo server命令
+<img src="/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041005.png"
+	width="1201"
+	height="487"
+	srcset="/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041005_hu2f1f76b5896143e651a2d0b83c19a39e_41233_480x0_resize_box_3.png 480w, /p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041005_hu2f1f76b5896143e651a2d0b83c19a39e_41233_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="2024041005.png"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="246"
+		data-flex-basis="591px"
+	
+>
+2）使用http://localhost:1313/即可访问！</p>
+<h2 id="将网站部署在github">
+    <a href="#%e5%b0%86%e7%bd%91%e7%ab%99%e9%83%a8%e7%bd%b2%e5%9c%a8github">#</a>
+    将网站部署在GitHub
+</h2><p>1、使用hugo -t=hugo-theme-stack -b=&ldquo;<a class="link" href="https://xiegl6.github.io/%22"  target="_blank" rel="noopener"
+    >https://xiegl6.github.io/"</a> &ndash;buildDrafts命令在根目录生成一个public文件夹（public存放静态网页）<br>
+2、在github上建一个名为xiegl6.github.io的仓库（必须是用户名.github.io）<br>
+3、在public目录中用用git初始化本地仓库，然后把public目录下的文件都提交到本地仓库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m&#39;提交描述&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>4、连接GitHub远程仓库，并将本地仓库文件同步到远程仓库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git remote add origin https://github.com/xiegl6/xiegl6.github.io.git
+</span></span><span class="line"><span class="cl">git push
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>5、使用https://xiegl6.github.io/即可访问！</p>
+<p><em>结束！撒花！</em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 written by xiegl6
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
