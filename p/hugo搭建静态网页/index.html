@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="# 工具准备 1、hugo下载安装（下载扩展版） 1）下载地址 https://github.com/gohugoio/hugo/releases 2）更改系统环境变量（让系统知道你已经下载了） 在path中添加hugo目录 3）运行hugo version查看版本，若出现版本号表示成功安装，若不成功，查看加入 path 的路径是否填对。 2、下载网站主题 1）下载网址 https://themes.gohugo.io/ # 网站搭建 1、新建一个文件夹，在文件夹内用cmd命令hugo new site xx在文件夹内创建一个网站 命令行：hugo new site MyBlog 此时的目录结构应该是这样: . ├── archetypes # 内容类型，在创建新内容时自动生成内容的配置 ├── content # 网站内容，Markdown 文件 ├── data ├── layouts # 网站模版，选择主题后会将主题中的 layouts 文件夹中的内容复制到此文件夹中 ├── static # 包含 CSS、JavaScript、Fonts、media 等，决定网站的外观。选择主题后会将主题中的 ststic 文件夹中的内容复制到此文件夹中 ├── themes # 存放主题文件 └── config.toml # 网站的配置文件 2、复制网站主题到MyBlog目录下themes文件夹中 3、修改网站配置信息（以hugo-theme-stack模板为例） 删掉默认的配置文件config.toml 将主题文件中的exampleSite中的config.yaml拷贝到blog根目录中 将themes/hugo-theme-stack/exampleSite里的content整个文件夹复制到根目录中 跟据需要修改config.yaml中的内容可以配置各个页面及相应功能： 1 2 3 4 5 6 7 8 9 baseURL = &#34;https://xiegl6.">
 <title>Hugo搭建静态网页</title>
 
-<link rel='canonical' href='https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/'>
+<link rel='canonical' href='http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/'>
 
 <link rel="stylesheet" href="/scss/style.min.8e60baf4cd3fc55968717a6e39762f4d28ed7ef6007566b6c7970ad0fe907198.css"><meta property='og:title' content="Hugo搭建静态网页">
 <meta property='og:description' content="# 工具准备 1、hugo下载安装（下载扩展版） 1）下载地址 https://github.com/gohugoio/hugo/releases 2）更改系统环境变量（让系统知道你已经下载了） 在path中添加hugo目录 3）运行hugo version查看版本，若出现版本号表示成功安装，若不成功，查看加入 path 的路径是否填对。 2、下载网站主题 1）下载网址 https://themes.gohugo.io/ # 网站搭建 1、新建一个文件夹，在文件夹内用cmd命令hugo new site xx在文件夹内创建一个网站 命令行：hugo new site MyBlog 此时的目录结构应该是这样: . ├── archetypes # 内容类型，在创建新内容时自动生成内容的配置 ├── content # 网站内容，Markdown 文件 ├── data ├── layouts # 网站模版，选择主题后会将主题中的 layouts 文件夹中的内容复制到此文件夹中 ├── static # 包含 CSS、JavaScript、Fonts、media 等，决定网站的外观。选择主题后会将主题中的 ststic 文件夹中的内容复制到此文件夹中 ├── themes # 存放主题文件 └── config.toml # 网站的配置文件 2、复制网站主题到MyBlog目录下themes文件夹中 3、修改网站配置信息（以hugo-theme-stack模板为例） 删掉默认的配置文件config.toml 将主题文件中的exampleSite中的config.yaml拷贝到blog根目录中 将themes/hugo-theme-stack/exampleSite里的content整个文件夹复制到根目录中 跟据需要修改config.yaml中的内容可以配置各个页面及相应功能： 1 2 3 4 5 6 7 8 9 baseURL = &#34;https://xiegl6.">
-<meta property='og:url' content='https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/'>
+<meta property='og:url' content='http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/'>
 <meta property='og:site_name' content='Day Day Up'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-04-10T22:57:41&#43;08:00'/><meta property='article:modified_time' content='2024-04-10T22:57:41&#43;08:00'/>
 <meta name="twitter:title" content="Hugo搭建静态网页">
@@ -477,7 +477,7 @@ tags: # 标签，用于文章分类<br>
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git init
-</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git add -A
 </span></span><span class="line"><span class="cl">git commit -m&#39;提交描述&#39;
 </span></span></code></pre></td></tr></table>
 </div>
@@ -489,7 +489,7 @@ tags: # 标签，用于文章分类<br>
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git remote add origin https://github.com/xiegl6/xiegl6.github.io.git
-</span></span><span class="line"><span class="cl">git push
+</span></span><span class="line"><span class="cl">git push -u origin master
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>5、使用https://xiegl6.github.io/即可访问！</p>

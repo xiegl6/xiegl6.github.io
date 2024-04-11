@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Day Day Up</title>
-        <link>https://xiegl6.github.io/post/</link>
+        <link>http://localhost:1313/post/</link>
         <description>Recent content in Posts on Day Day Up</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>written by xiegl6</copyright>
-        <lastBuildDate>Wed, 10 Apr 2024 22:57:41 +0800</lastBuildDate><atom:link href="https://xiegl6.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 10 Apr 2024 22:57:41 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo搭建静态网页</title>
-        <link>https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/</link>
+        <link>http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/</link>
         <pubDate>Wed, 10 Apr 2024 22:57:41 +0800</pubDate>
         
-        <guid>https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/</guid>
+        <guid>http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/</guid>
         <description>&lt;h2 id=&#34;工具准备&#34;&gt;
     &lt;a href=&#34;#%e5%b7%a5%e5%85%b7%e5%87%86%e5%a4%87&#34;&gt;#&lt;/a&gt;
     工具准备
@@ -21,10 +21,10 @@
     &gt;https://github.com/gohugoio/hugo/releases&lt;/a&gt; &lt;br&gt;
 2）更改系统环境变量（让系统知道你已经下载了）&lt;br&gt;
 在path中添加hugo目录&lt;br&gt;
-&lt;img src=&#34;https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041002.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041002.png&#34;
 	width=&#34;810&#34;
 	height=&#34;786&#34;
-	srcset=&#34;https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041002_hua694e655f865a96cfab62c46ebc82743_56397_480x0_resize_box_3.png 480w, https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041002_hua694e655f865a96cfab62c46ebc82743_56397_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041002_hua694e655f865a96cfab62c46ebc82743_56397_480x0_resize_box_3.png 480w, http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041002_hua694e655f865a96cfab62c46ebc82743_56397_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;2024041002.png&#34;
@@ -44,10 +44,10 @@
     网站搭建
 &lt;/h2&gt;&lt;p&gt;1、新建一个文件夹，在文件夹内用cmd命令hugo new site xx在文件夹内创建一个网站
 命令行：hugo new site MyBlog
-&lt;img src=&#34;https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041003.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041003.png&#34;
 	width=&#34;939&#34;
 	height=&#34;305&#34;
-	srcset=&#34;https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041003_hu601ffc5d9077c2be4e70f192fb4c4c9d_28213_480x0_resize_box_3.png 480w, https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041003_hu601ffc5d9077c2be4e70f192fb4c4c9d_28213_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041003_hu601ffc5d9077c2be4e70f192fb4c4c9d_28213_480x0_resize_box_3.png 480w, http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041003_hu601ffc5d9077c2be4e70f192fb4c4c9d_28213_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;2024041003.png&#34;
@@ -104,10 +104,10 @@
 &lt;/div&gt;&lt;p&gt;4、开始创作&lt;/p&gt;
 &lt;p&gt;1）在MyBlog文件夹中用命令行：hugo new post/Hugo搭建静态网页/index.md即可在content/post/Hugo搭建静态网页目录中生成一篇博客
 index.md内容为：
-&lt;img src=&#34;https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041004.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041004.png&#34;
 	width=&#34;816&#34;
 	height=&#34;95&#34;
-	srcset=&#34;https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041004_huac617b90059045e72d87e9eef64865b7_4943_480x0_resize_box_3.png 480w, https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041004_huac617b90059045e72d87e9eef64865b7_4943_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041004_huac617b90059045e72d87e9eef64865b7_4943_480x0_resize_box_3.png 480w, http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041004_huac617b90059045e72d87e9eef64865b7_4943_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;2024041004.png&#34;
@@ -132,10 +132,10 @@ tags: # 标签，用于文章分类&lt;br&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;5、启动网站服务
 1）在根目录下使用hugo server命令
-&lt;img src=&#34;https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041005.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041005.png&#34;
 	width=&#34;1201&#34;
 	height=&#34;487&#34;
-	srcset=&#34;https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041005_hu2f1f76b5896143e651a2d0b83c19a39e_41233_480x0_resize_box_3.png 480w, https://xiegl6.github.io/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041005_hu2f1f76b5896143e651a2d0b83c19a39e_41233_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041005_hu2f1f76b5896143e651a2d0b83c19a39e_41233_480x0_resize_box_3.png 480w, http://localhost:1313/p/hugo%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5/2024041005_hu2f1f76b5896143e651a2d0b83c19a39e_41233_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;2024041005.png&#34;
@@ -162,7 +162,7 @@ tags: # 标签，用于文章分类&lt;br&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add -A
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m&amp;#39;提交描述&amp;#39;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
@@ -174,7 +174,7 @@ tags: # 标签，用于文章分类&lt;br&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add origin https://github.com/xiegl6/xiegl6.github.io.git
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;5、使用https://xiegl6.github.io/即可访问！&lt;/p&gt;
@@ -183,11 +183,11 @@ tags: # 标签，用于文章分类&lt;br&gt;
         </item>
         <item>
         <title>Learn_markdown</title>
-        <link>https://xiegl6.github.io/p/learn_markdown/</link>
+        <link>http://localhost:1313/p/learn_markdown/</link>
         <pubDate>Tue, 09 Apr 2024 16:22:48 +0800</pubDate>
         
-        <guid>https://xiegl6.github.io/p/learn_markdown/</guid>
-        <description>&lt;img src="https://xiegl6.github.io/p/learn_markdown/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Learn_markdown" /&gt;&lt;h1 id=&#34;效果展示&#34;&gt;
+        <guid>http://localhost:1313/p/learn_markdown/</guid>
+        <description>&lt;img src="http://localhost:1313/p/learn_markdown/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Learn_markdown" /&gt;&lt;h1 id=&#34;效果展示&#34;&gt;
     &lt;a href=&#34;#%e6%95%88%e6%9e%9c%e5%b1%95%e7%a4%ba&#34;&gt;#&lt;/a&gt;
     效果展示
 &lt;/h1&gt;&lt;h1 id=&#34;标题1----记得空格&#34;&gt;
