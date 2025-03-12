@@ -7,12 +7,68 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>written by xiegl6</copyright>
-        <lastBuildDate>Tue, 09 Apr 2024 16:22:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 29 Apr 2024 11:39:09 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Springboot</title>
+        <link>http://localhost:1313/tags/springboot/</link>
+        <pubDate>Mon, 29 Apr 2024 11:39:09 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/springboot/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Maven</title>
+        <link>http://localhost:1313/tags/maven/</link>
+        <pubDate>Mon, 29 Apr 2024 11:37:47 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/maven/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Axios</title>
+        <link>http://localhost:1313/tags/axios/</link>
+        <pubDate>Sat, 27 Apr 2024 17:44:45 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/axios/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Vue</title>
+        <link>http://localhost:1313/tags/vue/</link>
+        <pubDate>Sat, 27 Apr 2024 17:44:45 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/vue/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>JavaScript</title>
+        <link>http://localhost:1313/tags/javascript/</link>
+        <pubDate>Sat, 27 Apr 2024 11:48:27 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/javascript/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Css</title>
+        <link>http://localhost:1313/tags/css/</link>
+        <pubDate>Sat, 27 Apr 2024 11:47:14 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/css/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Html</title>
         <link>http://localhost:1313/tags/html/</link>
-        <pubDate>Tue, 09 Apr 2024 16:22:48 +0800</pubDate>
+        <pubDate>Sat, 27 Apr 2024 11:47:14 +0800</pubDate>
         
         <guid>http://localhost:1313/tags/html/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Java</title>
+        <link>http://localhost:1313/tags/java/</link>
+        <pubDate>Wed, 24 Apr 2024 08:30:57 +0800</pubDate>
+        
+        <guid>http://localhost:1313/tags/java/</guid>
         <description></description>
         </item>
         <item>

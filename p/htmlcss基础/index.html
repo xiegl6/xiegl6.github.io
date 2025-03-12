@@ -1,0 +1,2798 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="# 1. 前端开发介绍 我们介绍Web网站工作流程的时候提到，前端开发，主要的职责就是将数据以好看的样式呈现出来。说白了，就是开发网页程序，如下图所示： 那在讲解web前端开发之前，我们先需要对web前端开发有一个整体的认知。主要明确一下三个问题： 1). 网页有哪些部分组成 ? 文字、图片、音频、视频、超链接、表格等等。 2). 我们看到的网页，背后的本质是什么 ? 程序员写的前端代码 (备注：在前后端分离的开发模式中，) 3). 前端的代码是如何转换成用户眼中的网页的 ? 通过浏览器转化（解析和渲染）成用户看到的网页 浏览器中对代码进行解析和渲染的部分，称为 浏览器内核 而市面上的浏览器非常多，比如：IE、火狐Firefox、苹果safari、欧朋、谷歌Chrome、QQ浏览器、360浏览器等等。 而且我们电脑上安装的浏览器可能都不止一个，有很多。 但是呢，需要大家注意的是，不同的浏览器，内核不同，对于相同的前端代码解析的效果也会存在差异。 那这就会造成一个问题，同一段前端程序，不同浏览器展示出来的效果是不一样的，这个用户体验就很差了。而我们想达到的效果则是，即使用户使用的是不同的浏览器，解析同一段前端代码，最终展示出来的效果都是相同的。 要想达成这样一个目标，我们就需要定义一个统一的标准，然后让各大浏览器厂商都参照这个标准来实现即可。 而这套标准呢，其实早都已经定义好了，那就是我们接下来，要介绍的web标准。 Web标准也称为网页标准，由一系列的标准组成，大部分由W3C（ World Wide Web Consortium，万维网联盟）负责制定。由三个组成部分： HTML：负责网页的结构（页面元素和内容）。 CSS：负责网页的表现（页面元素的外观、位置等页面样式，如：颜色、大小等）。 JavaScript：负责网页的行为（交互效果）。 当然了，随着技术的发展，我们为了更加快速的开发，现在也出现了很多前端开发的高级技术。例如：vue、elementui、Axios等等。 那这些内容呢，也是我们前端三天课程中要讲解的内容。 前端的3天课程安排如下： HTML &amp; CSS JavaScript &amp; Vue Ajax &amp; Axios &amp; ElementUI &amp; Nginx # 2. HTML &amp; CSS 1). 什么是HTML ? **HTML: **HyperText Markup Language，超文本标记语言。 超文本：超越了文本的限制，比普通文本更强大。除了文字信息，还可以定义图片、音频、视频等内容。 标记语言：由标签构成的语言 HTML标签都是预定义好的。例如：使用 标签展示标题，使用展示超链接，使用展示图片，展示视频。 HTML代码直接在浏览器中运行，HTML标签由浏览器解析。 下面展示的是一段html代码经过浏览器解析，呈现的效果如右图所示： \u200b">
+<title>Html、css基础</title>
+
+<link rel='canonical' href='http://localhost:1313/p/htmlcss%E5%9F%BA%E7%A1%80/'>
+
+<link rel="stylesheet" href="/scss/style.min.8e60baf4cd3fc55968717a6e39762f4d28ed7ef6007566b6c7970ad0fe907198.css"><meta property='og:title' content="Html、css基础">
+<meta property='og:description' content="# 1. 前端开发介绍 我们介绍Web网站工作流程的时候提到，前端开发，主要的职责就是将数据以好看的样式呈现出来。说白了，就是开发网页程序，如下图所示： 那在讲解web前端开发之前，我们先需要对web前端开发有一个整体的认知。主要明确一下三个问题： 1). 网页有哪些部分组成 ? 文字、图片、音频、视频、超链接、表格等等。 2). 我们看到的网页，背后的本质是什么 ? 程序员写的前端代码 (备注：在前后端分离的开发模式中，) 3). 前端的代码是如何转换成用户眼中的网页的 ? 通过浏览器转化（解析和渲染）成用户看到的网页 浏览器中对代码进行解析和渲染的部分，称为 浏览器内核 而市面上的浏览器非常多，比如：IE、火狐Firefox、苹果safari、欧朋、谷歌Chrome、QQ浏览器、360浏览器等等。 而且我们电脑上安装的浏览器可能都不止一个，有很多。 但是呢，需要大家注意的是，不同的浏览器，内核不同，对于相同的前端代码解析的效果也会存在差异。 那这就会造成一个问题，同一段前端程序，不同浏览器展示出来的效果是不一样的，这个用户体验就很差了。而我们想达到的效果则是，即使用户使用的是不同的浏览器，解析同一段前端代码，最终展示出来的效果都是相同的。 要想达成这样一个目标，我们就需要定义一个统一的标准，然后让各大浏览器厂商都参照这个标准来实现即可。 而这套标准呢，其实早都已经定义好了，那就是我们接下来，要介绍的web标准。 Web标准也称为网页标准，由一系列的标准组成，大部分由W3C（ World Wide Web Consortium，万维网联盟）负责制定。由三个组成部分： HTML：负责网页的结构（页面元素和内容）。 CSS：负责网页的表现（页面元素的外观、位置等页面样式，如：颜色、大小等）。 JavaScript：负责网页的行为（交互效果）。 当然了，随着技术的发展，我们为了更加快速的开发，现在也出现了很多前端开发的高级技术。例如：vue、elementui、Axios等等。 那这些内容呢，也是我们前端三天课程中要讲解的内容。 前端的3天课程安排如下： HTML &amp; CSS JavaScript &amp; Vue Ajax &amp; Axios &amp; ElementUI &amp; Nginx # 2. HTML &amp; CSS 1). 什么是HTML ? **HTML: **HyperText Markup Language，超文本标记语言。 超文本：超越了文本的限制，比普通文本更强大。除了文字信息，还可以定义图片、音频、视频等内容。 标记语言：由标签构成的语言 HTML标签都是预定义好的。例如：使用 标签展示标题，使用展示超链接，使用展示图片，展示视频。 HTML代码直接在浏览器中运行，HTML标签由浏览器解析。 下面展示的是一段html代码经过浏览器解析，呈现的效果如右图所示： \u200b">
+<meta property='og:url' content='http://localhost:1313/p/htmlcss%E5%9F%BA%E7%A1%80/'>
+<meta property='og:site_name' content='Day Day Up'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='html' /><meta property='article:tag' content='css' /><meta property='article:published_time' content='2024-04-27T11:47:14&#43;08:00'/><meta property='article:modified_time' content='2024-04-27T11:47:14&#43;08:00'/>
+<meta name="twitter:title" content="Html、css基础">
+<meta name="twitter:description" content="# 1. 前端开发介绍 我们介绍Web网站工作流程的时候提到，前端开发，主要的职责就是将数据以好看的样式呈现出来。说白了，就是开发网页程序，如下图所示： 那在讲解web前端开发之前，我们先需要对web前端开发有一个整体的认知。主要明确一下三个问题： 1). 网页有哪些部分组成 ? 文字、图片、音频、视频、超链接、表格等等。 2). 我们看到的网页，背后的本质是什么 ? 程序员写的前端代码 (备注：在前后端分离的开发模式中，) 3). 前端的代码是如何转换成用户眼中的网页的 ? 通过浏览器转化（解析和渲染）成用户看到的网页 浏览器中对代码进行解析和渲染的部分，称为 浏览器内核 而市面上的浏览器非常多，比如：IE、火狐Firefox、苹果safari、欧朋、谷歌Chrome、QQ浏览器、360浏览器等等。 而且我们电脑上安装的浏览器可能都不止一个，有很多。 但是呢，需要大家注意的是，不同的浏览器，内核不同，对于相同的前端代码解析的效果也会存在差异。 那这就会造成一个问题，同一段前端程序，不同浏览器展示出来的效果是不一样的，这个用户体验就很差了。而我们想达到的效果则是，即使用户使用的是不同的浏览器，解析同一段前端代码，最终展示出来的效果都是相同的。 要想达成这样一个目标，我们就需要定义一个统一的标准，然后让各大浏览器厂商都参照这个标准来实现即可。 而这套标准呢，其实早都已经定义好了，那就是我们接下来，要介绍的web标准。 Web标准也称为网页标准，由一系列的标准组成，大部分由W3C（ World Wide Web Consortium，万维网联盟）负责制定。由三个组成部分： HTML：负责网页的结构（页面元素和内容）。 CSS：负责网页的表现（页面元素的外观、位置等页面样式，如：颜色、大小等）。 JavaScript：负责网页的行为（交互效果）。 当然了，随着技术的发展，我们为了更加快速的开发，现在也出现了很多前端开发的高级技术。例如：vue、elementui、Axios等等。 那这些内容呢，也是我们前端三天课程中要讲解的内容。 前端的3天课程安排如下： HTML &amp; CSS JavaScript &amp; Vue Ajax &amp; Axios &amp; ElementUI &amp; Nginx # 2. HTML &amp; CSS 1). 什么是HTML ? **HTML: **HyperText Markup Language，超文本标记语言。 超文本：超越了文本的限制，比普通文本更强大。除了文字信息，还可以定义图片、音频、视频等内容。 标记语言：由标签构成的语言 HTML标签都是预定义好的。例如：使用 标签展示标题，使用展示超链接，使用展示图片，展示视频。 HTML代码直接在浏览器中运行，HTML标签由浏览器解析。 下面展示的是一段html代码经过浏览器解析，呈现的效果如右图所示： \u200b">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/kawa_hu8b82778b961e4525b8624599158ba533_22862_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Day Day Up</a></h1>
+            <h2 class="site-description">学无止境，勇攀高峰！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/xiegl6'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#21-html快速入门">2.1 HTML快速入门</a>
+      <ol>
+        <li><a href="#211-html页面的基础结构">2.1.1 HTML页面的基础结构</a></li>
+        <li><a href="#212-html中的标签特点">2.1.2 HTML中的标签特点</a></li>
+      </ol>
+    </li>
+    <li><a href="#22-开发工具">2.2 开发工具</a></li>
+    <li><a href="#23-基础标签--样式">2.3 基础标签 &amp; 样式</a>
+      <ol>
+        <li><a href="#231-新浪新闻-标题实现">2.3.1 新浪新闻-标题实现</a>
+          <ol>
+            <li><a href="#2311-标题排版">2.3.1.1 标题排版</a></li>
+            <li><a href="#2312-标题样式">2.3.1.2 标题样式</a></li>
+            <li><a href="#2313-超链接">2.3.1.3 超链接</a></li>
+          </ol>
+        </li>
+        <li><a href="#232-新浪新闻-正文实现">2.3.2 新浪新闻-正文实现</a>
+          <ol>
+            <li><a href="#2321-正文排版">2.3.2.1 正文排版</a></li>
+            <li><a href="#2322-页面布局">2.3.2.2 页面布局</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#24-表格标签">2.4 表格标签</a></li>
+    <li><a href="#25-表单标签">2.5 表单标签</a>
+      <ol>
+        <li><a href="#251-表单">2.5.1 表单</a>
+          <ol>
+            <li><a href="#2511-介绍">2.5.1.1 介绍</a></li>
+            <li><a href="#2512-通过getpost提交表单">2.5.1.2 通过GET/POST提交表单</a></li>
+            <li><a href="#2513-注意事项">2.5.1.3 注意事项</a></li>
+          </ol>
+        </li>
+        <li><a href="#252-表单项">2.5.2 表单项</a>
+          <ol>
+            <li><a href="#2521-介绍">2.5.2.1 介绍</a></li>
+            <li><a href="#2522-演示">2.5.2.2 演示</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#31-html文档查阅">3.1 HTML文档查阅</a></li>
+    <li><a href="#32-css文档查阅">3.2 CSS文档查阅</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%89%8D%E7%AB%AF/" >
+                前端
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/htmlcss%E5%9F%BA%E7%A1%80/">Html、css基础</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 27, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 12 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="1-前端开发介绍">
+    <a href="#1-%e5%89%8d%e7%ab%af%e5%bc%80%e5%8f%91%e4%bb%8b%e7%bb%8d">#</a>
+    1. 前端开发介绍
+</h1><p>我们介绍Web网站工作流程的时候提到，前端开发，主要的职责就是将数据以好看的样式呈现出来。说白了，就是开发网页程序，如下图所示：</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309163858689.png"
+	width="1420"
+	height="800"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309163858689_hu284244a5cc744c8f44b412cbebfc7809_575476_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309163858689_hu284244a5cc744c8f44b412cbebfc7809_575476_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309163858689"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<p>那在讲解web前端开发之前，我们先需要对web前端开发有一个整体的认知。主要明确一下三个问题：</p>
+<p>1). 网页有哪些部分组成 ?</p>
+<p>文字、图片、音频、视频、超链接、表格等等。</p>
+<p>2). 我们看到的网页，背后的本质是什么 ?</p>
+<p>程序员写的前端代码 (备注：在前后端分离的开发模式中，)</p>
+<p>3). 前端的代码是如何转换成用户眼中的网页的 ?</p>
+<p>通过浏览器转化（解析和渲染）成用户看到的网页</p>
+<p>浏览器中对代码进行解析和渲染的部分，称为 <strong>浏览器内核</strong></p>
+<p>而市面上的浏览器非常多，比如：IE、火狐Firefox、苹果safari、欧朋、谷歌Chrome、QQ浏览器、360浏览器等等。 而且我们电脑上安装的浏览器可能都不止一个，有很多。</p>
+<p>但是呢，需要大家注意的是，不同的浏览器，内核不同，对于相同的前端代码解析的效果也会存在差异。 那这就会造成一个问题，同一段前端程序，不同浏览器展示出来的效果是不一样的，这个用户体验就很差了。而我们想达到的效果则是，即使用户使用的是不同的浏览器，解析同一段前端代码，最终展示出来的效果都是相同的。</p>
+<p>要想达成这样一个目标，我们就需要定义一个统一的标准，然后让各大浏览器厂商都参照这个标准来实现即可。 而这套标准呢，其实早都已经定义好了，那就是我们接下来，要介绍的web标准。</p>
+<p><strong>Web标准</strong>也称为<strong>网页标准</strong>，由一系列的标准组成，大部分由W3C（ World Wide Web Consortium，万维网联盟）负责制定。由三个组成部分：</p>
+<ul>
+<li>
+<p>HTML：负责网页的结构（页面元素和内容）。</p>
+</li>
+<li>
+<p>CSS：负责网页的表现（页面元素的外观、位置等页面样式，如：颜色、大小等）。</p>
+</li>
+<li>
+<p>JavaScript：负责网页的行为（交互效果）。</p>
+</li>
+</ul>
+<img src="assets/image-20230309170412197.png" alt="image-20230309170412197" style="zoom:67%;" /> 
+<p>当然了，随着技术的发展，我们为了更加快速的开发，现在也出现了很多前端开发的高级技术。例如：vue、elementui、Axios等等。</p>
+<p>那这些内容呢，也是我们前端三天课程中要讲解的内容。 前端的3天课程安排如下：</p>
+<ul>
+<li>HTML &amp; CSS</li>
+<li>JavaScript &amp; Vue</li>
+<li>Ajax &amp; Axios &amp; ElementUI &amp; Nginx</li>
+</ul>
+<h1 id="2-html--css">
+    <a href="#2-html--css">#</a>
+    2. HTML &amp; CSS
+</h1><p>1). 什么是HTML ?</p>
+<blockquote>
+<p>**HTML: **HyperText Markup Language，超文本标记语言。</p>
+<ul>
+<li>
+<p>超文本：超越了文本的限制，比普通文本更强大。除了文字信息，还可以定义图片、音频、视频等内容。</p>
+</li>
+<li>
+<p>标记语言：由标签构成的语言</p>
+<ul>
+<li>HTML标签都是预定义好的。例如：使用 <h1> 标签展示标题，使用<a>展示超链接，使用<img>展示图片，<video>展示视频。</li>
+<li>HTML代码直接在浏览器中运行，HTML标签由浏览器解析。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>下面展示的是一段html代码经过浏览器解析，呈现的效果如右图所示：</p>
+<img src="assets/image-20230309172534138.png" alt="image-20230309172534138" style="zoom:80%;" />   
+<p>​</p>
+<p>2). 什么是CSS ?</p>
+<blockquote>
+<p><strong>CSS:</strong> Cascading Style Sheet，层叠样式表，用于控制页面的样式（表现）。</p>
+</blockquote>
+<p>下面展示的是一段 html代码 及 CSS样式 经过浏览器解析，呈现的效果如右图所示：</p>
+<img src="assets/image-20230309172634388.png" alt="image-20230309172634388" style="zoom: 80%;" /> 
+<p>​</p>
+<h2 id="21-html快速入门">
+    <a href="#21-html%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8">#</a>
+    2.1 HTML快速入门
+</h2><h3 id="211-html页面的基础结构">
+    <a href="#211-html%e9%a1%b5%e9%9d%a2%e7%9a%84%e5%9f%ba%e7%a1%80%e7%bb%93%e6%9e%84">#</a>
+    2.1.1 HTML页面的基础结构
+</h3><p>HTML页面的基础结构标签</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>HTML 快速入门<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello HTML<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;1.jpg&#34;</span><span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中&lt;html&gt;是根标签，&lt;head&gt;和&lt;body&gt;是子标签，&lt;head&gt;中的字标签&lt;title&gt;是用来定义网页的标题的，里面定义的内容会显示在浏览器网页的标题位置。</p>
+<p>而 &lt;body&gt; 中编写的内容，就网页中显示的核心内容。</p>
+<h3 id="212-html中的标签特点">
+    <a href="#212-html%e4%b8%ad%e7%9a%84%e6%a0%87%e7%ad%be%e7%89%b9%e7%82%b9">#</a>
+    2.1.2 HTML中的标签特点
+</h3><ul>
+<li>HTML标签不区分大小写</li>
+<li>HTML标签的属性值，采用单引号、双引号都可以</li>
+<li>HTML语法相对比较松散 (建议大家编写HTML标签的时候尽量严谨一些)</li>
+</ul>
+<h2 id="22-开发工具">
+    <a href="#22-%e5%bc%80%e5%8f%91%e5%b7%a5%e5%85%b7">#</a>
+    2.2 开发工具
+</h2><ul>
+<li>
+<p>我们通过快速入门案例，发现由记事本文件开发html是非常不方便的，所以接下来我们需要学习一款前端专业的开发工具VS Code。</p>
+</li>
+<li>
+<p>Visual Studio Code（简称 VS Code ）是 Microsoft 于2015年4月发布的一款代码编辑器。VS Code 对前端代码有非常强大的支持，同时也其他编程语言（例如：C++、Java、Python、PHP、Go等）。VS Code 提供了非常强大的插件库，大大提高了开发效率。</p>
+</li>
+<li>
+<p>官网： <a class="link" href="https://code.visualstudio.com"  target="_blank" rel="noopener"
+    >https://code.visualstudio.com</a></p>
+</li>
+</ul>
+<blockquote>
+<p>注意：需要注意的是，我们作为一名开发者，不应该将软件软装在包含中文名的路径中 。</p>
+</blockquote>
+<h2 id="23-基础标签--样式">
+    <a href="#23-%e5%9f%ba%e7%a1%80%e6%a0%87%e7%ad%be--%e6%a0%b7%e5%bc%8f">#</a>
+    2.3 基础标签 &amp; 样式
+</h2><p>那我们在讲解HTML的常见基础标签 及 CSS的基本样式时，我们就以 新浪新闻页面 为例，来进行讲解，这样大家不仅能够知道 常见标签及样式的作用，还能够知道具体的应用场景。</p>
+<p>新浪新闻的具体页面效果如下：</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309221756293.png"
+	width="1678"
+	height="945"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309221756293_hu297105fe59aaf739213c25469b810223_831172_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309221756293_hu297105fe59aaf739213c25469b810223_831172_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309221756293"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<p>原始页面网址：https://news.sina.com.cn/gov/xlxw/2023-03-03/doc-imyipzuy7321600.shtml</p>
+<p>而对于这个新浪新闻的页面来说，核心内容分为两个部分，如下：</p>
+<ul>
+<li>新浪新闻-标题部分</li>
+<li>新浪新闻-正文部分</li>
+</ul>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309222608750.png"
+	width="780"
+	height="767"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309222608750_hu433978bcfaa5d484d1664b7585848381_301988_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309222608750_hu433978bcfaa5d484d1664b7585848381_301988_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309222608750"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="101"
+		data-flex-basis="244px"
+	
+></p>
+<h3 id="231-新浪新闻-标题实现">
+    <a href="#231-%e6%96%b0%e6%b5%aa%e6%96%b0%e9%97%bb-%e6%a0%87%e9%a2%98%e5%ae%9e%e7%8e%b0">#</a>
+    2.3.1 新浪新闻-标题实现
+</h3><h4 id="2311-标题排版">
+    <a href="#2311-%e6%a0%87%e9%a2%98%e6%8e%92%e7%89%88">#</a>
+    2.3.1.1 标题排版
+</h4><h5 id="23111-分析">
+    <a href="#23111-%e5%88%86%e6%9e%90">#</a>
+    2.3.1.1.1 分析
+</h5><img src="assets/image-20230309223020809.png" alt="image-20230309223020809" style="zoom:67%;" /> 
+<p>1). 第一部分，是一张图片，需要用到HTML中的图片标签 <img> 来实现。</p>
+<p>2). 第二部分，是一个标题，需要用到HTML中的标题标签 <h1> &hellip; <h6>来实现。</p>
+<p>3). 第三部分，有两条水平分割线，需要用到HTML中的 <hr> 标签来定义水平分割线。</p>
+<h5 id="23112-标签">
+    <a href="#23112-%e6%a0%87%e7%ad%be">#</a>
+    2.3.1.1.2 标签
+</h5><p>1). 图片标签 img</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">A. 图片标签: <span class="p">&lt;</span><span class="nt">img</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">B. 常见属性: 
+</span></span><span class="line"><span class="cl">	src: 指定图像的url (可以指定 绝对路径 , 也可以指定 相对路径)
+</span></span><span class="line"><span class="cl">	width: 图像的宽度 (像素 / 百分比 , 相对于父元素的百分比)
+</span></span><span class="line"><span class="cl">	height: 图像的高度 (像素 / 百分比 , 相对于父元素的百分比)
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	备注: 一般width 和 height 我们只会指定一个，另外一个会自动的等比例缩放。
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">C. 路径书写方式:
+</span></span><span class="line"><span class="cl">    绝对路径:
+</span></span><span class="line"><span class="cl">        1. 绝对磁盘路径: C:\Users\Administrator\Desktop\HTML\img\news_logo.png
+</span></span><span class="line"><span class="cl">        			   <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;C:\Users\Administrator\Desktop\HTML\img\news_logo.png&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        2. 绝对网络路径: https://i2.sinaimg.cn/dy/deco/2012/0613/yocc20120613img01/news_logo.png
+</span></span><span class="line"><span class="cl">        			   <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://i2.sinaimg.cn/dy/deco/2012/0613/yocc20120613img01/news_logo.png&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    相对路径:
+</span></span><span class="line"><span class="cl">        ./ : 当前目录 , ./ 可以省略的
+</span></span><span class="line"><span class="cl">        ../: 上一级目录
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>2). 标题标签 h 系列</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">A. 标题标签: <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> - <span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>111111111111<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>111111111111<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>111111111111<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>111111111111<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>111111111111<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>111111111111<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">B. 效果 : h1为一级标题，字体也是最大的 ； h6为六级标题，字体是最小的。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>3). 水平分页线标签 <hr></p>
+<h5 id="23112-实现">
+    <a href="#23112-%e5%ae%9e%e7%8e%b0">#</a>
+    2.3.1.1.2 实现
+</h5><p>1). 打开VsCode，选择左侧最底部的 &ldquo;资源管理器&rdquo;，然后选择打开文件夹，选择打开桌面的 HTML 文件夹</p>
+<p>2). 将资料中提供的 图片、音频、视频 文件夹的这三个文件夹（里面是图片、音视频素材），复制到 HTML 文件夹中。</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309224226495.png"
+	width="739"
+	height="178"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309224226495_hu195b878a4eecf7c23e2c49197b33a7b7_11286_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309224226495_hu195b878a4eecf7c23e2c49197b33a7b7_11286_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309224226495"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="415"
+		data-flex-basis="996px"
+	
+></p>
+<p>3). 在VsCode中创建一个新的 html 文件，文件的后缀名设置为 .html</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309224401950.png"
+	width="293"
+	height="236"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309224401950_hu7d85b830b288bf8d551cabcc529504cc_14039_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309224401950_hu7d85b830b288bf8d551cabcc529504cc_14039_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309224401950"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="124"
+		data-flex-basis="297px"
+	
+></p>
+<p>4). html 文件创建好之后，在其中输入 ！，然后直接回车，就可以生成 HTML 的基础结构标签</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309224645231.png"
+	width="1730"
+	height="517"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309224645231_hu79fa3fab576c4a9766d84bfba91b4b75_66382_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309224645231_hu79fa3fab576c4a9766d84bfba91b4b75_66382_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309224645231"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="334"
+		data-flex-basis="803px"
+	
+></p>
+<p>5). 编写标题排版的核心代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!-- 文档类型为HTML --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 字符集为UTF-8 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 设置浏览器兼容性 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 
+</span></span></span><span class="line"><span class="cl"><span class="c">    img标签: 
+</span></span></span><span class="line"><span class="cl"><span class="c">        src: 图片资源路径
+</span></span></span><span class="line"><span class="cl"><span class="c">        width: 宽度(px, 像素 ; % , 相对于父元素的百分比)
+</span></span></span><span class="line"><span class="cl"><span class="c">        height: 高度(px, 像素 ; % , 相对于父元素的百分比)
+</span></span></span><span class="line"><span class="cl"><span class="c">        
+</span></span></span><span class="line"><span class="cl"><span class="c">        &lt;img src=&#34;img/news_logo.png&#34; width=&#34;80%&#34; &gt;
+</span></span></span><span class="line"><span class="cl"><span class="c">
+</span></span></span><span class="line"><span class="cl"><span class="c">    路径书写方式:
+</span></span></span><span class="line"><span class="cl"><span class="c">        绝对路径:
+</span></span></span><span class="line"><span class="cl"><span class="c">            1. 绝对磁盘路径: C:\Users\Administrator\Desktop\HTML\img\news_logo.png
+</span></span></span><span class="line"><span class="cl"><span class="c">                           &lt;img src=&#34;C:\Users\Administrator\Desktop\HTML\img\news_logo.png&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c">
+</span></span></span><span class="line"><span class="cl"><span class="c">            2. 绝对网络路径: https://i2.sinaimg.cn/dy/deco/2012/0613/yocc20120613img01/news_logo.png
+</span></span></span><span class="line"><span class="cl"><span class="c">                           &lt;img src=&#34;https://i2.sinaimg.cn/dy/deco/2012/0613/yocc20120613img01/news_logo.png&#34;&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c">        相对路径:
+</span></span></span><span class="line"><span class="cl"><span class="c">            ./ : 当前目录 , ./ 可以省略的
+</span></span></span><span class="line"><span class="cl"><span class="c">            ../: 上一级目录
+</span></span></span><span class="line"><span class="cl"><span class="c">     --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/news_logo.png&#34;</span><span class="p">&gt;</span> 新浪政务 &gt; 正文
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    2023年03月02日 21:50 央视网
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2312-标题样式">
+    <a href="#2312-%e6%a0%87%e9%a2%98%e6%a0%b7%e5%bc%8f">#</a>
+    2.3.1.2 标题样式
+</h4><p>新浪新闻的标题部分的基本排版，我们已经完成了，然后大家会看到，我们编写的一级标题，默认字体颜色为纯黑色。 而原始的新浪新闻页面的新闻标题字体，并不是纯黑色，而是灰黑色， 那接下来，我们就要来设置这个字体的颜色。 而要设置这个字体的颜色，我们就需要通过CSS样式来控制 。</p>
+<p>那在HTML的文件中，我们如何来编写CSS样式呢，此时就涉及到CSS的三种引入方式。</p>
+<h5 id="23121-css引入方式">
+    <a href="#23121-css%e5%bc%95%e5%85%a5%e6%96%b9%e5%bc%8f">#</a>
+    2.3.1.2.1 CSS引入方式
+</h5><p>具体有3种引入方式，语法如下表格所示：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>语法描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行内样式</td>
+<td>在标签内使用style属性，属性值是css属性键值对</td>
+<td>&lt;h1 style=&ldquo;xxx:xxx;&quot;&gt;中国新闻网&lt;/h1&gt;</td>
+</tr>
+<tr>
+<td>内嵌样式</td>
+<td>定义&lt;style&gt;标签，在标签内部定义css样式</td>
+<td>&lt;style&gt; h1 {&hellip;} &lt;/style&gt;</td>
+</tr>
+<tr>
+<td>外联样式</td>
+<td>定义&lt;link&gt;标签，通过href属性引入外部css文件</td>
+<td>&lt;link rel=&ldquo;stylesheet&rdquo; href=&ldquo;css/news.css&rdquo;&gt;</td>
+</tr>
+</tbody>
+</table></div>
+<p>对于上述3种引入方式，企业开发的使用情况如下：</p>
+<ol>
+<li>内联样式会出现大量的代码冗余，不方便后期的维护，所以不常用。</li>
+<li>内部样式，通过定义css选择器，让样式作用于当前页面的指定的标签上。</li>
+<li>外部样式，html和css实现了完全的分离，企业开发常用方式。</li>
+</ol>
+<h5 id="23122-颜色表示">
+    <a href="#23122-%e9%a2%9c%e8%89%b2%e8%a1%a8%e7%a4%ba">#</a>
+    2.3.1.2.2 颜色表示
+</h5><p>在前端程序开发中，颜色的表示方式常见的有如下三种：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th><strong>表示方式</strong></th>
+<th><strong>表示含义</strong></th>
+<th><strong>取值</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关键字</td>
+<td>预定义的颜色名</td>
+<td>red、green、blue&hellip;</td>
+</tr>
+<tr>
+<td>rgb表示法</td>
+<td>红绿蓝三原色，每项取值范围：0-255</td>
+<td>rgb(0,0,0)、rgb(255,255,255)、rgb(255,0,0)</td>
+</tr>
+<tr>
+<td>十六进制表示法</td>
+<td>#开头，将数字转换成十六进制表示</td>
+<td>#000000、#ff0000、#cccccc，简写：#000、#ccc</td>
+</tr>
+</tbody>
+</table></div>
+<h5 id="23123-标题字体颜色">
+    <a href="#23123-%e6%a0%87%e9%a2%98%e5%ad%97%e4%bd%93%e9%a2%9c%e8%89%b2">#</a>
+    2.3.1.2.3 标题字体颜色
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 方式二: 内嵌样式 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">h1</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* color: red; */</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* color: rgb(0, 0, 255); */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#4D4F53</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 方式三: 外联样式 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- &lt;link rel=&#34;stylesheet&#34; href=&#34;css/news.css&#34;&gt; --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/news_logo.png&#34;</span><span class="p">&gt;</span> 新浪政务 &gt; 正文
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 方式一: 行内样式 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- &lt;h1 style=&#34;color: red;&#34;&gt;焦点访谈：中国底气 新思想夯实大国粮仓&lt;/h1&gt; --&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    2023年03月02日 21:50 央视网
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>备注: 要想拾取某一个网页中的颜色，我们可以借助于浏览器的拾色器插件来完成。【拾色器插件的安装，参照资料中提供的文档即可】</p>
+<h5 id="23124-css选择器">
+    <a href="#23124-css%e9%80%89%e6%8b%a9%e5%99%a8">#</a>
+    2.3.1.2.4 CSS选择器
+</h5><p>顾名思义：选择器是选取需设置样式的元素（标签），但是我们根据业务场景不同，选择的标签的需求也是多种多样的，所以选择器有很多种，因为我们是做后台开发的，所以对于css选择器，我们只学习最基本的3种。</p>
+<p><strong>选择器通用语法如下</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">选择器名</span>   <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="err">css样式名：css样式值</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="err">css样式名：css样式值</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们需要学习的3种选择器是<strong>元素选择器，id选择器，class选择器</strong>，语法以及作用如下：</p>
+<p><strong>1.元素（标签）选择器：</strong></p>
+<ul>
+<li>选择器的名字必须是标签的名字</li>
+<li>作用：选择器中的样式会作用于所有同名的标签上</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">元素名称 {
+</span></span><span class="line"><span class="cl">    css样式名:css样式值；
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例子如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"> <span class="nt">div</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>2.id选择器:</strong></p>
+<ul>
+<li>选择器的名字前面需要加上#</li>
+<li>作用：选择器中的样式会作用于指定id的标签上，而且有且只有一个标签（由于id是唯一的）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#id属性值 {
+</span></span><span class="line"><span class="cl">    css样式名:css样式值；
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例子如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">#</span><span class="nn">did</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>3.类选择器：</strong></p>
+<ul>
+<li>选择器的名字前面需要加上 .</li>
+<li>作用：选择器中的样式会作用于所有class的属性值和该名字一样的标签上，可以是多个</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.class属性值 {
+</span></span><span class="line"><span class="cl">    css样式名:css样式值；
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例子如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">cls</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="k">color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="23125-发布时间字体颜色">
+    <a href="#23125-%e5%8f%91%e5%b8%83%e6%97%b6%e9%97%b4%e5%ad%97%e4%bd%93%e9%a2%9c%e8%89%b2">#</a>
+    2.3.1.2.5 发布时间字体颜色
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">h1</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#4D4F53</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">/* 元素选择器 */</span>
+</span></span><span class="line"><span class="cl">        <span class="c">/* span {
+</span></span></span><span class="line"><span class="cl"><span class="c">            color: red;
+</span></span></span><span class="line"><span class="cl"><span class="c">        } */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">/* 类选择器 */</span>
+</span></span><span class="line"><span class="cl">        <span class="c">/* .cls {
+</span></span></span><span class="line"><span class="cl"><span class="c">            color: green;
+</span></span></span><span class="line"><span class="cl"><span class="c">        } */</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c">/* ID选择器 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">#</span><span class="nn">time</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#968D92</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-size</span><span class="p">:</span> <span class="mi">13</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 设置字体大小 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/news_logo.png&#34;</span><span class="p">&gt;</span> 新浪政务 &gt; 正文
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;cls&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="p">&gt;</span>2023年03月02日 21:50<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;cls&#34;</span><span class="p">&gt;</span>央视网<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述我们还使用了一个css的属性 font-size , 用来设置字体的大小。 但是需要注意，在设置字体的大小时，单位px不能省略，否则不生效。</p>
+<h4 id="2313-超链接">
+    <a href="#2313-%e8%b6%85%e9%93%be%e6%8e%a5">#</a>
+    2.3.1.3 超链接
+</h4><ul>
+<li>
+<p>在新浪新闻的标题部分，当我们点击顶部的 &ldquo;新浪政务&rdquo;，浏览器将自动在当前窗口访问新浪政务首页这个资源（http://gov.sina.com.cn/）</p>
+</li>
+<li>
+<p>当我们点击新闻发布时间之后的 &ldquo;央视网&rdquo;，浏览器将会自动打开一个新的标签页，然后在新的标签页中访问央视网中的该新闻资源 （https://news.cctv.com/2023/03/02/ARTIUCKFf9kE9eXgYE46ugx3230302.shtml）</p>
+</li>
+</ul>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/a.gif"
+	width="1920"
+	height="1080"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/a_hua01f871dd5efa5f98c30506cda65534d_12520314_480x0_resize_box_1.gif 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/a_hua01f871dd5efa5f98c30506cda65534d_12520314_1024x0_resize_box_1.gif 1024w"
+	loading="lazy"
+	
+		alt="a"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<p>那接下来，我们就来完善新闻标题部分的这个功能，那此时呢，我们就需要用到HTML中的超链接的标签 。</p>
+<h5 id="23131-介绍">
+    <a href="#23131-%e4%bb%8b%e7%bb%8d">#</a>
+    2.3.1.3.1 介绍
+</h5><ul>
+<li>标签: &lt;a href=&rdquo;&hellip;&quot; target=&quot;&hellip;&quot;&gt;央视网</a></li>
+<li>属性:
+<ul>
+<li>href: 指定资源访问的url</li>
+<li>target: 指定在何处打开资源链接
+<ul>
+<li>_self: 默认值，在当前页面打开</li>
+<li>_blank: 在空白页面打开</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="23132-实现">
+    <a href="#23132-%e5%ae%9e%e7%8e%b0">#</a>
+    2.3.1.3.2 实现
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">h1</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#4D4F53</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="p">#</span><span class="nn">time</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#968D92</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-size</span><span class="p">:</span> <span class="mi">13</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 设置字体大小 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span> <span class="c">/* 设置文本为一个标准的文本 , 去除掉 超链接 下面默认的下划线 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/news_logo.png&#34;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://gov.sina.com.cn/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_self&#34;</span><span class="p">&gt;</span>新浪政务<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>  &gt; 正文
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="p">&gt;</span>2023年03月02日 21:50<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://news.cctv.com/2023/03/02/ARTIUCKFf9kE9eXgYE46ugx3230302.shtml&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>央视网<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>浏览器打开此页面，我们可以看到最终效果（超链接的字体，以及默认的下划线，通过css样式已经调整好了）：</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309233408698.png"
+	width="1716"
+	height="478"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309233408698_hue88f26dbdeb8fc654350df1c3411d6f5_51086_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309233408698_hue88f26dbdeb8fc654350df1c3411d6f5_51086_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309233408698"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="358"
+		data-flex-basis="861px"
+	
+></p>
+<h3 id="232-新浪新闻-正文实现">
+    <a href="#232-%e6%96%b0%e6%b5%aa%e6%96%b0%e9%97%bb-%e6%ad%a3%e6%96%87%e5%ae%9e%e7%8e%b0">#</a>
+    2.3.2 新浪新闻-正文实现
+</h3><h4 id="2321-正文排版">
+    <a href="#2321-%e6%ad%a3%e6%96%87%e6%8e%92%e7%89%88">#</a>
+    2.3.2.1 正文排版
+</h4><h5 id="23211-分析">
+    <a href="#23211-%e5%88%86%e6%9e%90">#</a>
+    2.3.2.1.1 分析
+</h5><img src="assets/image-20230310084859695.png" alt="image-20230310084859695" style="zoom:80%;" /> 
+<p>整个正文部分的排版，主要分为这么四个部分：</p>
+<p>1). 视频 (当前这种新闻页面,可能也会存在音频)</p>
+<p>2). 文字段落</p>
+<p>3). 字体加粗</p>
+<p>4). 图片</p>
+<h5 id="23212-标签">
+    <a href="#23212-%e6%a0%87%e7%ad%be">#</a>
+    2.3.2.1.2 标签
+</h5><p><strong>1). 视频、音频标签</strong></p>
+<ul>
+<li>
+<p>视频标签: &lt;video&gt;</p>
+<ul>
+<li>属性:
+<ul>
+<li>src: 规定视频的url</li>
+<li>controls: 显示播放控件</li>
+<li>width: 播放器的宽度</li>
+<li>height: 播放器的高度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>音频标签: &lt;audio&gt;</p>
+<ul>
+<li>属性:
+<ul>
+<li>src: 规定音频的url</li>
+<li>controls: 显示播放控件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>2). 段落标签</strong></p>
+<ul>
+<li>换行标签: &lt;br&gt;
+<ul>
+<li>注意: 在HTML页面中,我们在编辑器中通过回车实现的换行, 仅仅在文本编辑器中会看到换行效果, 浏览器是不会解析的, HTML中换行需要通过br标签</li>
+</ul>
+</li>
+</ul>
+<p>​</p>
+<ul>
+<li>段落标签: &lt;p&gt;
+<ul>
+<li>如: &lt;p&gt; 这是一个段落 &lt;/p&gt;</li>
+</ul>
+</li>
+</ul>
+<p><strong>3). 文本格式标签</strong></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>效果</th>
+<th>标签</th>
+<th>标签(强调)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加粗</td>
+<td>b</td>
+<td>strong</td>
+</tr>
+<tr>
+<td>倾斜</td>
+<td>i</td>
+<td>em</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td>u</td>
+<td>ins</td>
+</tr>
+<tr>
+<td>删除线</td>
+<td>s</td>
+<td>del</td>
+</tr>
+</tbody>
+</table></div>
+<p>前面的标签 b、i、u、s 就仅仅是实现加粗、倾斜、下划线、删除线的效果，是没有强调语义的。 而后面的strong、em、ins、del在实现加粗、倾斜、下划线、删除线的效果的同时，还带有强调语义。</p>
+<h5 id="23213-实现">
+    <a href="#23213-%e5%ae%9e%e7%8e%b0">#</a>
+    2.3.2.1.3 实现
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">h1</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#4D4F53</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="p">#</span><span class="nn">time</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#968D92</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-size</span><span class="p">:</span> <span class="mi">13</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 设置字体大小 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span> <span class="c">/* 设置文本为一个标准的文本 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">p</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-indent</span><span class="p">:</span> <span class="mi">35</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 设置首行缩进 */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">line-height</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 设置行高 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">#</span><span class="nn">plast</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-align</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span> <span class="c">/* 对齐方式 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 标题 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/news_logo.png&#34;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://gov.sina.com.cn/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_self&#34;</span><span class="p">&gt;</span>新浪政务<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>  &gt; 正文
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="p">&gt;</span>2023年03月02日 21:50<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://news.cctv.com/2023/03/02/ARTIUCKFf9kE9eXgYE46ugx3230302.shtml&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>央视网<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 正文 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 视频 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">video</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;video/1.mp4&#34;</span> <span class="na">controls</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;950px&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 音频 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- &lt;audio src=&#34;audio/1.mp3&#34; controls&gt;&lt;/audio&gt; --&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>央视网消息<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> （焦点访谈）：党的十八大以来，以习近平同志为核心的党中央始终把解决粮食安全问题作为治国理政的头等大事，重农抓粮一系列政策举措有力有效，我国粮食产量站稳1.3万亿斤台阶，实现谷物基本自给、口粮绝对安全。我们把饭碗牢牢端在自己手中，为保障经济社会发展提供了坚实支撑，为应对各种风险挑战赢得了主动。连续八年1.3万亿斤，这个沉甸甸的数据是如何取得的呢？
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    人勤春来早，春耕农事忙。立春之后，由南到北，我国春耕春管工作陆续展开，春天的田野处处生机盎然。
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/1.jpg&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        今年，我国启动了新一轮千亿斤粮食产能提升行动，这是一个新的起点。2015年以来，我国粮食产量连续8年稳定在1.3万亿斤以上，人均粮食占有量始终稳稳高于国际公认的400公斤粮食安全线。从十年前的约12200亿斤到2022年的约13700亿斤，粮食产量提高了1500亿斤。
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/2.jpg&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        中国式现代化一个重要的中国特色是人口规模巨大的现代化。我们粮食生产的发展，意味着我们要立足国内，解决14亿多人吃饭的问题。仓廪实，天下安。保障粮食安全是一个永恒的课题，任何时候都不能放松。在以习近平同志为核心的党中央坚强领导下，亿万中国人民辛勤耕耘、不懈奋斗，我们就一定能够牢牢守住粮食安全这一“国之大者”，把中国人的饭碗牢牢端在自己手中，夯实中国式现代化基础。
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;plast&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        责任编辑：王树淼 SN242
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在上述的正文排版实现中，还用到了几个CSS属性：</p>
+<ul>
+<li>text-indent: 设置段落的首行缩进</li>
+<li>line-height: 设置行高</li>
+<li>text-align: 设置对齐方式, 可取值为 left / center / right</li>
+</ul>
+<blockquote>
+<p>注意事项:</p>
+<ul>
+<li>
+<p>在HTML页面中无论输入了多少个空格, 最多只会显示一个。 可以使用空格占位符（&amp;nbsp；）来生成空格，如果需要多个空格，就使用多次占位符。</p>
+</li>
+<li>
+<p>那在HTML中，除了空格占位符以外，还有一些其他的占位符(了解, 只需要知道空格的占位符写法即可)，如下：</p>
+<ul>
+<li>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">显示结果</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">占位符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">空格</td>
+<td style="text-align:left">&amp;nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;</td>
+<td style="text-align:left">小于号</td>
+<td style="text-align:left">&amp;lt;</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">大于号</td>
+<td style="text-align:left">&amp;gt;</td>
+</tr>
+<tr>
+<td style="text-align:left">&amp;</td>
+<td style="text-align:left">和号</td>
+<td style="text-align:left">&amp;amp;</td>
+</tr>
+<tr>
+<td style="text-align:left">&quot;</td>
+<td style="text-align:left">引号</td>
+<td style="text-align:left">&amp;quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">'</td>
+<td style="text-align:left">撇号</td>
+<td style="text-align:left">&amp;apos;</td>
+</tr>
+</tbody>
+</table></div>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="2322-页面布局">
+    <a href="#2322-%e9%a1%b5%e9%9d%a2%e5%b8%83%e5%b1%80">#</a>
+    2.3.2.2 页面布局
+</h4><p>目前，新闻页面的基本排版，我们都已经完成了，但是，大家会看到，无论是标题部分，还是正文部分，都是铺满了整个浏览器。 而我们再来看看新浪新闻的原始页面，我们会看到新闻网页内容都是居中展示的，左边、右边都是一定的边距的。</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310092442972.png"
+	width="914"
+	height="749"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310092442972_hu8afdf18827267912e4823efcf9af56ce_329038_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310092442972_hu8afdf18827267912e4823efcf9af56ce_329038_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230310092442972"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="122"
+		data-flex-basis="292px"
+	
+></p>
+<p>那接下来呢，我们就需要按照这个效果，来完成页面布局。 而要想完成这样一个页面布局，我们就需要介绍一下CSS中的盒子模型 。</p>
+<h5 id="23221-盒子模型">
+    <a href="#23221-%e7%9b%92%e5%ad%90%e6%a8%a1%e5%9e%8b">#</a>
+    2.3.2.2.1 盒子模型
+</h5><ul>
+<li>
+<p>盒子：页面中所有的元素（标签），都可以看做是一个 盒子，由盒子将页面中的元素包含在一个矩形区域内，通过盒子的视角更方便的进行页面布局</p>
+</li>
+<li>
+<p>盒子模型组成：内容区域（content）、内边距区域（padding）、边框区域（border）、外边距区域（margin）</p>
+</li>
+</ul>
+<img src="assets/image-20230310092820616.png" alt="image-20230310092820616" style="zoom:80%;" /> 
+<p>CSS盒子模型，其实和日常生活中的包装盒是非常类似的，就比如：</p>
+<img src="assets/image-20230310093247265.png" alt="image-20230310093247265" style="zoom:80%;" /> 
+<p>盒子的大小，其实就包括三个部分： border、padding、content，<strong>而margin外边距是不包括在盒子之内的</strong>。</p>
+<h5 id="23222-布局标签">
+    <a href="#23222-%e5%b8%83%e5%b1%80%e6%a0%87%e7%ad%be">#</a>
+    2.3.2.2.2 布局标签
+</h5><ul>
+<li>
+<p>布局标签：实际开发网页中，会大量频繁的使用 div 和 span 这两个没有语义的布局标签。</p>
+</li>
+<li>
+<p>标签：<div> <span></p>
+</li>
+<li>
+<p>特点：</p>
+<ul>
+<li>
+<p>div标签：</p>
+<ul>
+<li>
+<p>一行只显示一个（独占一行）</p>
+</li>
+<li>
+<p>宽度默认是父元素的宽度，高度默认由内容撑开</p>
+</li>
+<li>
+<p>可以设置宽高（width、height）</p>
+</li>
+</ul>
+</li>
+<li>
+<p>span标签：</p>
+<ul>
+<li>
+<p>一行可以显示多个</p>
+</li>
+<li>
+<p>宽度和高度默认由内容撑开</p>
+</li>
+<li>
+<p>不可以设置宽高（width、height）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>测试：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A 
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A 
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A 
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A 
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>浏览器打开后的效果:</p>
+<p>1). div会独占一行，默认宽度为父元素 body 的宽度</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310093734941.png"
+	width="1914"
+	height="404"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310093734941_hu1cc9fad24a8f77c5562de8b546c6ad77_39400_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310093734941_hu1cc9fad24a8f77c5562de8b546c6ad77_39400_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230310093734941"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="473"
+		data-flex-basis="1137px"
+	
+></p>
+<p>2). span一行会显示多个，用来组合行内元素，默认宽度为内容撑开的宽度</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310093827748.png"
+	width="1913"
+	height="479"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310093827748_hu2bd151ab544cdd0000684a561c94a4b3_40452_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310093827748_hu2bd151ab544cdd0000684a561c94a4b3_40452_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230310093827748"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="399"
+		data-flex-basis="958px"
+	
+></p>
+<h5 id="23223-盒子模型代码">
+    <a href="#23223-%e7%9b%92%e5%ad%90%e6%a8%a1%e5%9e%8b%e4%bb%a3%e7%a0%81">#</a>
+    2.3.2.2.3 盒子模型代码
+</h5><p>代码如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>盒子模型<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>  <span class="c">/* 宽度 */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>  <span class="c">/* 高度 */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">box-sizing</span><span class="p">:</span> <span class="kc">border-box</span><span class="p">;</span> <span class="c">/* 指定width height为盒子的高宽 */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-color</span><span class="p">:</span> <span class="kc">aquamarine</span><span class="p">;</span> <span class="c">/* 背景色 */</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="k">padding</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span> <span class="mi">20</span><span class="kt">px</span> <span class="mi">20</span><span class="kt">px</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 内边距, 上 右 下 左 , 边距都一行, 可以简写: padding: 20px;*/</span> 
+</span></span><span class="line"><span class="cl">            <span class="k">border</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">red</span><span class="p">;</span> <span class="c">/* 边框, 宽度 线条类型 颜色 */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">margin</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span> <span class="mi">30</span><span class="kt">px</span> <span class="mi">30</span><span class="kt">px</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 外边距, 上 右 下 左 , 边距都一行, 可以简写: margin: 30px; */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A 
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>代码编写好了, 可以通过浏览器打开该页面, 通过开发者工具,我们就可以看到盒子的大小, 以及盒子各个组成部分(内容、内边距、边框、外边距)：</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310094312355.png"
+	width="1527"
+	height="759"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310094312355_hu8979930f6a2169ba00486f11ac60ac07_61904_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310094312355_hu8979930f6a2169ba00486f11ac60ac07_61904_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230310094312355"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="201"
+		data-flex-basis="482px"
+	
+></p>
+<p>我们也可以，通过浏览器的开发者工具，清晰的看到这个盒子，以及每一个部分的大小：</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310094412539.png"
+	width="1913"
+	height="742"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310094412539_hu16b38f64179a785d2b093c037a65ca69_54666_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310094412539_hu16b38f64179a785d2b093c037a65ca69_54666_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230310094412539"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="257"
+		data-flex-basis="618px"
+	
+></p>
+<h5 id="23223-布局实现">
+    <a href="#23223-%e5%b8%83%e5%b1%80%e5%ae%9e%e7%8e%b0">#</a>
+    2.3.2.2.3 布局实现
+</h5><p>在实现新闻页面的布局时，我们需要做两部操作：</p>
+<ul>
+<li>第一步：需要将body中的新闻标题部分、正文部分使用一个 div 布局标签将其包裹起来，方便通过css设置内容占用的宽度，比如：65%。</li>
+<li>第二步：通过css为该div设置外边距，左右的外边距分别为：17.5%，上下外边距靠边展示即可，为：0%。</li>
+</ul>
+<p>具体的代码实现如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">h1</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#4D4F53</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="p">#</span><span class="nn">time</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#968D92</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-size</span><span class="p">:</span> <span class="mi">13</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 设置字体大小 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span> <span class="c">/* 设置文本为一个标准的文本 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">p</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-indent</span><span class="p">:</span> <span class="mi">35</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 设置首行缩进 */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">line-height</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 设置行高 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">#</span><span class="nn">plast</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-align</span><span class="p">:</span> <span class="kc">right</span><span class="p">;</span> <span class="c">/* 对齐方式 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">#</span><span class="nn">center</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">width</span><span class="p">:</span> <span class="mi">65</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* margin: 0% 17.5% 0% 17.5% ; */</span> <span class="c">/* 外边距, 上 右 下 左 */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;center&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- 标题 --&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/news_logo.png&#34;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://gov.sina.com.cn/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_self&#34;</span><span class="p">&gt;</span>新浪政务<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>  &gt; 正文
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>焦点访谈：中国底气 新思想夯实大国粮仓<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="p">&gt;</span>2023年03月02日 21:50<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://news.cctv.com/2023/03/02/ARTIUCKFf9kE9eXgYE46ugx3230302.shtml&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>央视网<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- 正文 --&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- 视频 --&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">video</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;video/1.mp4&#34;</span> <span class="na">controls</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;950px&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- 音频 --&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- &lt;audio src=&#34;audio/1.mp3&#34; controls&gt;&lt;/audio&gt; --&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>央视网消息<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> （焦点访谈）：党的十八大以来，以习近平同志为核心的党中央始终把解决粮食安全问题作为治国理政的头等大事，重农抓粮一系列政策举措有力有效，我国粮食产量站稳1.3万亿斤台阶，实现谷物基本自给、口粮绝对安全。我们把饭碗牢牢端在自己手中，为保障经济社会发展提供了坚实支撑，为应对各种风险挑战赢得了主动。连续八年1.3万亿斤，这个沉甸甸的数据是如何取得的呢？
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        人勤春来早，春耕农事忙。立春之后，由南到北，我国春耕春管工作陆续展开，春天的田野处处生机盎然。
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/1.jpg&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            今年，我国启动了新一轮千亿斤粮食产能提升行动，这是一个新的起点。2015年以来，我国粮食产量连续8年稳定在1.3万亿斤以上，人均粮食占有量始终稳稳高于国际公认的400公斤粮食安全线。从十年前的约12200亿斤到2022年的约13700亿斤，粮食产量提高了1500亿斤。
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/2.jpg&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            中国式现代化一个重要的中国特色是人口规模巨大的现代化。我们粮食生产的发展，意味着我们要立足国内，解决14亿多人吃饭的问题。仓廪实，天下安。保障粮食安全是一个永恒的课题，任何时候都不能放松。在以习近平同志为核心的党中央坚强领导下，亿万中国人民辛勤耕耘、不懈奋斗，我们就一定能够牢牢守住粮食安全这一“国之大者”，把中国人的饭碗牢牢端在自己手中，夯实中国式现代化基础。
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;plast&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            责任编辑：王树淼 SN242
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>  
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>浏览器打开此页面，最终效果如下：</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310094732466.png"
+	width="1917"
+	height="1028"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310094732466_hub3c0fbee687a0d634f8a276e88b98ede_553230_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230310094732466_hub3c0fbee687a0d634f8a276e88b98ede_553230_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230310094732466"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="186"
+		data-flex-basis="447px"
+	
+></p>
+<h2 id="24-表格标签">
+    <a href="#24-%e8%a1%a8%e6%a0%bc%e6%a0%87%e7%ad%be">#</a>
+    2.4 表格标签
+</h2><p>**场景：**在网页中以表格（行、列）形式整齐展示数据，我们在一些管理类的系统中，会看到数据通常都是以表格的形式呈现出来的，比如：班级表、学生表、课程表、成绩表等等。</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309174438491.png"
+	width="852"
+	height="368"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309174438491_huec7053ed97818d93f68d39f6c74bd2eb_117788_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309174438491_huec7053ed97818d93f68d39f6c74bd2eb_117788_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309174438491"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="231"
+		data-flex-basis="555px"
+	
+></p>
+<p><strong>标签：</strong></p>
+<ul>
+<li>
+<p>&lt;table&gt; : 用于定义整个表格, 可以包裹多个 &lt;tr&gt;， 常用属性如下：</p>
+<ul>
+<li>border：规定表格边框的宽度</li>
+<li>width：规定表格的宽度</li>
+<li>cellspacing: 规定单元之间的空间</li>
+</ul>
+</li>
+<li>
+<p>&lt;tr&gt; : 表格的行，可以包裹多个 &lt;td&gt;</p>
+</li>
+<li>
+<p>&lt;td&gt; : 表格单元格(普通)，可以包裹内容 , 如果是表头单元格，可以替换为 &lt;th&gt;</p>
+</li>
+</ul>
+<p><strong>演示：</strong></p>
+<p>代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>HTML-表格<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">td</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span> <span class="c">/* 单元格内容居中展示 */</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#34;1px&#34;</span> <span class="na">cellspacing</span><span class="o">=</span><span class="s">&#34;0&#34;</span>  <span class="na">width</span><span class="o">=</span><span class="s">&#34;600px&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>序号<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>品牌Logo<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>品牌名称<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>企业名称<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/huawei.jpg&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;100px&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>华为<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>华为技术有限公司<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;img/alibaba.jpg&#34;</span>  <span class="na">width</span><span class="o">=</span><span class="s">&#34;100px&#34;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>阿里<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>阿里巴巴集团控股有限公司<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>打开浏览器，效果如下图所示：</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309175121361.png"
+	width="765"
+	height="224"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309175121361_hu499f3cfce58028aa58cb21936656e8b6_34779_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309175121361_hu499f3cfce58028aa58cb21936656e8b6_34779_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309175121361"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="341"
+		data-flex-basis="819px"
+	
+></p>
+<p>整合表格使用 table 标签包裹 , 其中的每一行数据都是一个 tr , 每一行中的每一个单元格都是一个 td , 而如果是表头单元格, 可以使用 th (具有加粗居中展示的效果)。</p>
+<h2 id="25-表单标签">
+    <a href="#25-%e8%a1%a8%e5%8d%95%e6%a0%87%e7%ad%be">#</a>
+    2.5 表单标签
+</h2><h3 id="251-表单">
+    <a href="#251-%e8%a1%a8%e5%8d%95">#</a>
+    2.5.1 表单
+</h3><h4 id="2511-介绍">
+    <a href="#2511-%e4%bb%8b%e7%bb%8d">#</a>
+    2.5.1.1 介绍
+</h4><p>那表单呢,在我们日常的上网的过程中,基本上每天都会遇到。比如，我们经常在访问网站时，出现的登录页面、注册页面、个人信息提交页面，其实都是一个一个的表单 。 当我们在这些表单中录入数据之后，一点击 &ldquo;提交&rdquo;，就会将表单中我们填写的数据采集到，并提交， 那其实这个数据呢，一般会提交到服务端，最终保存在数据库中 （后面的课程中会讲到）。</p>
+<p><img src="assets/1668055779440.png" alt="1668055779440" style="zoom:80%;" /> <img src="assets/image-20230309175941128.png" alt="image-20230309175941128" style="zoom:80%;" /></p>
+<p>那其实，上述的整个窗口是一个表单，而表单是一项一项的，这个我们称为表单项 或 表单元素。</p>
+<ul>
+<li>
+<p>表单场景: 表单就是在网页中负责数据采集功能的，如：注册、登录的表单。</p>
+</li>
+<li>
+<p>表单标签: &lt;form&gt;</p>
+</li>
+<li>
+<p>表单属性:</p>
+<ul>
+<li>action: 规定表单提交时，向何处发送表单数据，表单提交的URL。</li>
+<li>method: 规定用于发送表单数据的方式，常见为： GET、POST。
+<ul>
+<li>GET：表单数据是拼接在url后面的， 如： xxxxxxxxxxx?username=Tom&amp;age=12，url中能携带的表单数据大小是有限制的。</li>
+<li>POST： 表单数据是在请求体（消息体）中携带的，大小没有限制。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>表单项标签: 不同类型的input元素、下拉列表、文本域等。</p>
+<ul>
+<li>input: 定义表单项，通过type属性控制输入形式</li>
+<li>select: 定义下拉列表</li>
+<li>textarea: 定义文本域</li>
+</ul>
+</li>
+</ul>
+<h4 id="2512-通过getpost提交表单">
+    <a href="#2512-%e9%80%9a%e8%bf%87getpost%e6%8f%90%e4%ba%a4%e8%a1%a8%e5%8d%95">#</a>
+    2.5.1.2 通过GET/POST提交表单
+</h4><p>1). GET方式提交的表单</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>HTML-表单<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 
+</span></span></span><span class="line"><span class="cl"><span class="c">    form表单属性: 
+</span></span></span><span class="line"><span class="cl"><span class="c">        action: 表单提交的url, 往何处提交数据 . 如果不指定, 默认提交到当前页面
+</span></span></span><span class="line"><span class="cl"><span class="c">        method: 表单的提交方式 .
+</span></span></span><span class="line"><span class="cl"><span class="c">            get: 在url后面拼接表单数据, 比如: ?username=Tom&amp;age=12 , url长度有限制 . 默认值
+</span></span></span><span class="line"><span class="cl"><span class="c">            post: 在消息体(请求体)中传递的, 参数大小无限制的.
+</span></span></span><span class="line"><span class="cl"><span class="c">    --&gt;</span>   
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;get&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        用户名: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;username&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        年龄: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;age&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;提交&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>表单编写完毕之后，通过浏览器打开此表单，然后再表单项中录入值之后，点击提交，我们会看到表单的数据在url后面提交到服务端，格式为：?username=Tom&amp;age=12。</p>
+<img src="assets/image-20230309191725329.png" alt="image-20230309191725329" style="zoom:80%;" /> 
+<p>2). POST方式提交表单</p>
+<p>将上述的表单提交方式由get，改为post</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>HTML-表单<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 
+</span></span></span><span class="line"><span class="cl"><span class="c">    form表单属性: 
+</span></span></span><span class="line"><span class="cl"><span class="c">        action: 表单提交的url, 往何处提交数据 . 如果不指定, 默认提交到当前页面
+</span></span></span><span class="line"><span class="cl"><span class="c">        method: 表单的提交方式 .
+</span></span></span><span class="line"><span class="cl"><span class="c">            get: 在url后面拼接表单数据, 比如: ?username=Tom&amp;age=12 , url长度有限制 . 默认值
+</span></span></span><span class="line"><span class="cl"><span class="c">            post: 在消息体(请求体)中传递的, 参数大小无限制的.
+</span></span></span><span class="line"><span class="cl"><span class="c">    --&gt;</span>   
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;post&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        用户名: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;username&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        年龄: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;age&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;提交&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>表单编写完毕之后，通过浏览器打开此表单，然后再表单项中录入值之后，点击提交，我们会看到表单的数据在url后面提交到服务端，格式为：?username=Tom&amp;age=12。</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309192625939.png"
+	width="1341"
+	height="577"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309192625939_hua2d62dcc15ec7ef5b928dd4deca33f57_49707_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309192625939_hua2d62dcc15ec7ef5b928dd4deca33f57_49707_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309192625939"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="232"
+		data-flex-basis="557px"
+	
+></p>
+<h4 id="2513-注意事项">
+    <a href="#2513-%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9">#</a>
+    2.5.1.3 注意事项
+</h4><p>表单中的所有表单项，要想能够正常的采集数据，在提交的时候能提交到服务端，表单项必须指定name属性。 否则，无法提交该表单项。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">用户名: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;username&#34;</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="252-表单项">
+    <a href="#252-%e8%a1%a8%e5%8d%95%e9%a1%b9">#</a>
+    2.5.2 表单项
+</h3><h4 id="2521-介绍">
+    <a href="#2521-%e4%bb%8b%e7%bb%8d">#</a>
+    2.5.2.1 介绍
+</h4><p>在一个表单中，可以存在很多的表单项，而虽然表单项的形式各式各样，但是表单项的标签其实就只有三个，分别是：</p>
+<ul>
+<li>
+<p>&lt;input&gt;: 表单项 , 通过type属性控制输入形式。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>type取值</th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>默认值，定义单行的输入字段</td>
+</tr>
+<tr>
+<td>password</td>
+<td>定义密码字段</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>定义单选按钮</td>
+</tr>
+<tr>
+<td>checkbox</td>
+<td>定义复选框</td>
+</tr>
+<tr>
+<td>file</td>
+<td>定义文件上传按钮</td>
+</tr>
+<tr>
+<td>date/time/datetime-local</td>
+<td>定义日期/时间/日期时间</td>
+</tr>
+<tr>
+<td>number</td>
+<td>定义数字输入框</td>
+</tr>
+<tr>
+<td>email</td>
+<td>定义邮件输入框</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>定义隐藏域（不会在界面上显示，可以用来提交默认值）</td>
+</tr>
+<tr>
+<td>submit / reset / button</td>
+<td>定义提交按钮 / 重置按钮 / 可点击按钮</td>
+</tr>
+</tbody>
+</table></div>
+</li>
+<li>
+<p>&lt;select&gt;: 定义下拉列表, &lt;option&gt; 定义列表项</p>
+</li>
+<li>
+<p>&lt;textarea&gt;: 文本域</p>
+</li>
+</ul>
+<h4 id="2522-演示">
+    <a href="#2522-%e6%bc%94%e7%a4%ba">#</a>
+    2.5.2.2 演示
+</h4><p>创建一个新的表单项的html文件，具体内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>HTML-表单项标签<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- value: 表单项提交的值 --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;post&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     姓名: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;name&#34;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     密码: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;password&#34;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl">     性别: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;radio&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;gender&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span> 男
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;radio&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;gender&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span> 女 <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     爱好: <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;checkbox&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;hobby&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;java&#34;</span><span class="p">&gt;</span> java <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;checkbox&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;hobby&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;game&#34;</span><span class="p">&gt;</span> game <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;checkbox&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;hobby&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;sing&#34;</span><span class="p">&gt;</span> sing <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     图像: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;file&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;image&#34;</span><span class="p">&gt;</span>  <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     生日: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;date&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;birthday&#34;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     时间: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;time&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     日期时间: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;datetime-local&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;datetime&#34;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     邮箱: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;email&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;email&#34;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     年龄: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;number&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;age&#34;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     学历: <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;degree&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">               <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p">&gt;</span>----------- 请选择 -----------<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">               <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>大专<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">               <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span>本科<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">               <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;3&#34;</span><span class="p">&gt;</span>硕士<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">               <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;4&#34;</span><span class="p">&gt;</span>博士<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>  <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     描述: <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;description&#34;</span> <span class="na">cols</span><span class="o">=</span><span class="s">&#34;30&#34;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&#34;10&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>  <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;hidden&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;id&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">	 	
+</span></span><span class="line"><span class="cl">     <span class="c">&lt;!-- 表单常见按钮 --&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;按钮&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;reset&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;重置&#34;</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;提交&#34;</span><span class="p">&gt;</span>   
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>通过浏览器打开上述的表单项html文件，最终展示出的表单信息如下：</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309221308252.png"
+	width="852"
+	height="758"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309221308252_hu6fe7a99c34d88e6c5c2c0566b855a1ea_45975_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309221308252_hu6fe7a99c34d88e6c5c2c0566b855a1ea_45975_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309221308252"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="112"
+		data-flex-basis="269px"
+	
+></p>
+<p>而对于input type=&ldquo;hidden&rdquo;，是一个隐藏域，在表单中并不会显示出来，但是在提交表单的时候，是会提交到服务端的。 接下来，我们就点击提交按钮，来提交当前表单，看看提交的数据：</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309221530214.png"
+	width="1128"
+	height="516"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309221530214_hu459d3bc3e018cb3ca68f97f27c15db76_41818_480x0_resize_box_3.png 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/image-20230309221530214_hu459d3bc3e018cb3ca68f97f27c15db76_41818_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="image-20230309221530214"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="218"
+		data-flex-basis="524px"
+	
+></p>
+<h1 id="3-文档查阅">
+    <a href="#3-%e6%96%87%e6%a1%a3%e6%9f%a5%e9%98%85">#</a>
+    3. 文档查阅
+</h1><p>文档地址: <a class="link" href="https://www.w3school.com.cn/index.html"  target="_blank" rel="noopener"
+    >https://www.w3school.com.cn/index.html</a></p>
+<h2 id="31-html文档查阅">
+    <a href="#31-html%e6%96%87%e6%a1%a3%e6%9f%a5%e9%98%85">#</a>
+    3.1 HTML文档查阅
+</h2><p>以video标签为例:</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/html.gif"
+	width="1920"
+	height="1080"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/html_hudf9407dd77cf5ad9e76d4d4e27d00404_24770595_480x0_resize_box_1.gif 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/html_hudf9407dd77cf5ad9e76d4d4e27d00404_24770595_1024x0_resize_box_1.gif 1024w"
+	loading="lazy"
+	
+		alt="html"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<h2 id="32-css文档查阅">
+    <a href="#32-css%e6%96%87%e6%a1%a3%e6%9f%a5%e9%98%85">#</a>
+    3.2 CSS文档查阅
+</h2><p>以padding属性为例:</p>
+<p><img src="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/css.gif"
+	width="1920"
+	height="1080"
+	srcset="/p/htmlcss%E5%9F%BA%E7%A1%80/assets/css_hu6f6984b551b35cd92e8bafc17e03897a_35057731_480x0_resize_box_1.gif 480w, /p/htmlcss%E5%9F%BA%E7%A1%80/assets/css_hu6f6984b551b35cd92e8bafc17e03897a_35057731_1024x0_resize_box_1.gif 1024w"
+	loading="lazy"
+	
+		alt="css"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/html/">Html</a>
+        
+            <a href="/tags/css/">Css</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82vue%E5%B7%A5%E7%A8%8Belement%E7%BB%84%E4%BB%B6/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">异步请求、vue工程、element组件</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/jsvue%E5%9F%BA%E7%A1%80/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Js、vue基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/web%E5%BC%80%E5%8F%91%E6%A6%82%E8%BF%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Web开发概述</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 written by xiegl6
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
